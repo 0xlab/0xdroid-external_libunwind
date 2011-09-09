@@ -208,7 +208,8 @@ do {						\
 
 #define SOS_MEMORY_SIZE 16384	/* see src/mi/mempool.c */
 
-#ifndef MAP_ANONYMOUS
+/* On Adroid bionic/libc/kernel/arch-arm/asm/mman.h defines MAP_ANONYMOUS.  */
+#if ! defined (MAP_ANONYMOUS) && ! defined (ANDROID)
 # define MAP_ANONYMOUS MAP_ANON
 #endif
 #define GET_MEMORY(mem, size)				    		    \
