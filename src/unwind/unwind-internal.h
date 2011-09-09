@@ -28,7 +28,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.  */
 
 #define UNW_LOCAL_ONLY
 
-#include <unwind.h>
+#include <unwind-minimal.h>
 #include <stdlib.h>
 #include <libunwind.h>
 

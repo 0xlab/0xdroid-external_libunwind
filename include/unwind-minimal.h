@@ -23,8 +23,8 @@ LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
 OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.  */
 
-#ifndef _UNWIND_H
-#define _UNWIND_H
+#ifndef _UNWIND_MINIMAL_H
+#define _UNWIND_MINIMAL_H
 
 /* For uint64_t */
 #include <stdint.h>
@@ -151,4 +151,4 @@ extern void *_Unwind_FindEnclosingFunction (void *);
 };
 #endif
 
-#endif /* _UNWIND_H */
+#endif /* _UNWIND_MINIMAL_H */
