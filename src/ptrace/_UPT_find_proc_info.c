@@ -152,6 +152,11 @@ _UPTi_find_unwind_table (struct UPT_info *ui, unw_addr_space_t as,
 #include "dwarf-eh.h"
 #include "dwarf_i.h"
 
+#ifdef ANDROID
+#define PT_GNU_EH_FRAME	0x6474e550	/* GCC .eh_frame_hdr segment */
+#define PT_ARM_EXIDX	0x70000001	/* ARM unwind segment.  */
+#endif /* ANDROID */
+
 /* We need our own instance of dwarf_read_encoded_pointer() here since
    the one in dwarf/Gpe.c is not (and should not be) exported.  */
 int

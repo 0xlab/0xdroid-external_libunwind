@@ -35,6 +35,11 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.  */
 #include "dwarf-eh.h"
 #include "libunwind_i.h"
 
+#ifdef ANDROID
+#define PT_GNU_EH_FRAME	0x6474e550	/* GCC .eh_frame_hdr segment */
+#define PT_ARM_EXIDX	0x70000001	/* ARM unwind segment.  */
+#endif 
+
 struct table_entry
   {
     int32_t start_ip_offset;

@@ -30,6 +30,10 @@ http://infocenter.arm.com/help/topic/com.arm.doc.ihi0038a/IHI0038A_ehabi.pdf
 
 #include "libunwind_i.h"
 
+#ifdef ANDROID
+#define PT_ARM_EXIDX	0x70000001	/* ARM unwind segment.  */
+#endif /* ANDROID */
+
 #define ARM_EXBUF_START(x)	(((x) >> 4) & 0x0f)
 #define ARM_EXBUF_COUNT(x)	((x) & 0x0f)
 #define ARM_EXBUF_END(x)	(ARM_EXBUF_START(x) + ARM_EXBUF_COUNT(x))
