@@ -69,7 +69,7 @@ SrcFiles := $(commonSrcFiles) \
 	src/arm/Gex_tables.c
 endif # arm
 
-# build static and shared libraries
+# build static libraries
 include $(CLEAR_VARS)
 LOCAL_CFLAGS += $(Cflags)
 LOCAL_C_INCLUDES := $(Includes)
@@ -78,12 +78,3 @@ LOCAL_SHARED_LIBRARIES := libc
 LOCAL_MODULE := libunwind
 LOCAL_MODULE_TAGS := optional
 include $(BUILD_STATIC_LIBRARY)
-
-include $(CLEAR_VARS)
-LOCAL_CFLAGS += $(Cflags)
-LOCAL_C_INCLUDES := $(Includes)
-LOCAL_SRC_FILES := $(SrcFiles)
-LOCAL_SHARED_LIBRARIES := libc
-LOCAL_MODULE := libunwind
-LOCAL_MODULE_TAGS := optional
-include $(BUILD_SHARED_LIBRARY)
